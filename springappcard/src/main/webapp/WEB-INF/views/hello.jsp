@@ -1,9 +1,9 @@
 <%@ include file="/WEB-INF/views/include.jsp" %>
 
 <html>
-  <head><title>Hello :: Spring Application</title></head>
+  <head><title>Comision :: Application Modify Comission</title></head>
   <body>
-    <h1>Hello - Spring Application</h1>
-    <p>Greetings, it is now <c:out value="${now}"/></p>
+    <h1>Application Modify Comission</h1>
+    <p>Regards, it is now <c:out value="${now}"/></p>
   </body>
 </html>
