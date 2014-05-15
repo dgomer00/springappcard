@@ -1,9 +1,17 @@
 <%@ include file="/WEB-INF/views/include.jsp" %>
 
+
 <html>
-  <head><title>Comision :: Application Modify Comission</title></head>
+  <head><title><fmt:message key="title"/></title></head>
   <body>
-    <h1>Application Modify Comission</h1>
-    <p>Regards, it is now <c:out value="${now}"/></p>
+    <h1><fmt:message key="heading"/></h1>
+    <p><fmt:message key="greeting"/> <c:out value="${model.now}"/></p>
+    <h3>Comissions</h3>
+    <c:forEach items="${model.comissions}" var="commi">
+      <c:out value="${commi.description}"/> <i>$<c:out value="${commi.comission}"/></i><br><br>
+    </c:forEach>
+    <br>
+    <a href="<c:url value="comissionincrease.htm"/>">Increase Comissions</a>
+    <br>
   </body>
 </html>
