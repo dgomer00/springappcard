@@ -11,7 +11,7 @@
       <c:out value="${commi.description}"/> <i>$<c:out value="${commi.comission}"/></i><br><br>
     </c:forEach>
     <br>
-    <a href="<c:url value="comissionincrease.htm"/>">Increase Comissions</a>
     <br>
+    <a href="<c:url value="comissionincrease.htm"/>">Increase Comissions</a>
   </body>
 </html>

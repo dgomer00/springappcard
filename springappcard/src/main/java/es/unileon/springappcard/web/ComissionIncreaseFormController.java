@@ -27,22 +27,50 @@ public class ComissionIncreaseFormController {
     @RequestMapping(method = RequestMethod.POST)
     public String onSubmit(@Valid ComissionIncrease comissionIncrease, BindingResult result)
     {
+    	System.out.println(comissionIncrease.toString());
         if (result.hasErrors()) {
             return "comissionincrease";
         }
 		
-        int increase = comissionIncrease.getPercentage();
-        logger.info("Increasing comission by " + increase + "%.");
+        int increaseCreditEmission = comissionIncrease.getPercentageCreditEmission();
+        logger.info("Increasing comission by " + increaseCreditEmission + "%.");
+        comissionManager.increaseComissionCreditEmission(increaseCreditEmission);
+        
+        int increaseCreditMaintenance = comissionIncrease.getPercentageCreditMaintenance();
+        logger.info("Increasing comission by " + increaseCreditMaintenance + "%.");
+        comissionManager.increaseComissionCreditMaintenance(increaseCreditMaintenance);
+        
+        int increaseCreditRenovate = comissionIncrease.getPercentageCreditRenovate();
+        logger.info("Increasing comission by " + increaseCreditRenovate + "%.");
+        comissionManager.increaseComissionCreditRenovate(increaseCreditRenovate);
+        
+        int increaseDebitEmission = comissionIncrease.getPercentageDebitEmission();
+        logger.info("Increasing comission by " + increaseDebitEmission + "%.");
+        comissionManager.increaseComissionDebitEmission(increaseDebitEmission);
+        
+        int increaseDebitMaintenance = comissionIncrease.getPercentageDebitMaintenance();
+        logger.info("Increasing comission by " + increaseDebitMaintenance + "%.");
+        comissionManager.increaseComissionDebitMaintenance(increaseDebitMaintenance);
+        
+        int increaseDebitRenovate = comissionIncrease.getPercentageDebitRenovate();
+        logger.info("Increasing comission by " + increaseDebitRenovate + "%.");
+        comissionManager.increaseComissionDebitRenovate(increaseDebitRenovate);
+        
 
-        comissionManager.increaseComission(increase);
 
         return "redirect:/hello.htm";
     }
 
+
     @RequestMapping(method = RequestMethod.GET)
     protected ComissionIncrease formBackingObject(HttpServletRequest request) throws ServletException {
         ComissionIncrease comissionIncrease = new ComissionIncrease();
-        comissionIncrease.setPercentage(2);
+        comissionIncrease.setPercentageCreditEmission(2);
+        comissionIncrease.setPercentageCreditMaintenance(2);
+        comissionIncrease.setPercentageCreditRenovate(2);
+        comissionIncrease.setPercentageDebitEmission(2);
+        comissionIncrease.setPercentageDebitMaintenance(2);
+        comissionIncrease.setPercentageDebitRenovate(2);
         return comissionIncrease;
     }
 
