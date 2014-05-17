@@ -14,10 +14,20 @@ public class ComissionIncrease {
     @Min(0)
     @Max(15)
     private int percentageCreditEmission;
+    @Min(0)
+    @Max(15)
     private int percentageCreditMaintenance;
+    @Min(0)
+    @Max(15)
     private int percentageCreditRenovate;
+    @Min(0)
+    @Max(15)
     private int percentageDebitEmission;
+    @Min(0)
+    @Max(15)
     private int percentageDebitMaintenance;
+    @Min(0)
+    @Max(15)
     private int percentageDebitRenovate;
 
 

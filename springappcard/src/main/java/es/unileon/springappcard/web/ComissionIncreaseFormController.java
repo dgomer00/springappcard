@@ -27,7 +27,7 @@ public class ComissionIncreaseFormController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String onSubmit(@Valid ComissionIncrease comissionIncrease,
 			BindingResult result) {
-		System.out.println(comissionIncrease.toString());
+		
 		if (result.hasErrors()) {
 			return "comissionincrease";
 		}
