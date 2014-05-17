@@ -7,13 +7,18 @@ import java.util.List;
 
 public interface ComissionManager extends Serializable {
 
-	  public void increaseComissionCreditEmission(int percentage);
-	  public void increaseComissionCreditMaintenance(int percentage);
-	  public void increaseComissionCreditRenovate(int percentage);
-	  public void increaseComissionDebitEmission(int percentage);
-	  public void increaseComissionDebitMaintenance(int percentage);
-	  public void increaseComissionDebitRenovate(int percentage);
-	    public List<Comission> getComissions();
+	public void increaseComissionCreditEmission(int percentage);
 
-	
+	public void increaseComissionCreditMaintenance(int percentage);
+
+	public void increaseComissionCreditRenovate(int percentage);
+
+	public void increaseComissionDebitEmission(int percentage);
+
+	public void increaseComissionDebitMaintenance(int percentage);
+
+	public void increaseComissionDebitRenovate(int percentage);
+
+	public List<Comission> getComissions();
+
 }

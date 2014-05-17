@@ -23,7 +23,7 @@
     </tr>
   </table>
   <br>
-    <table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0" cellpadding="5">
+  <table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0" cellpadding="5">
     <tr>
       <td align="right" width="25%">Comission Credit Maintenance (%):</td>
         <td width="20%">
@@ -35,7 +35,7 @@
     </tr>
   </table>
   <br>
-      <table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0" cellpadding="5">
+  <table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0" cellpadding="5">
     <tr>
       <td align="right" width="25%">Comission Credit Renovate (%):</td>
         <td width="20%">
@@ -47,7 +47,7 @@
     </tr>
   </table>
   <br>
-      <table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0" cellpadding="5">
+  <table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0" cellpadding="5">
     <tr>
       <td align="right" width="25%">Comission Debit Emission (%):</td>
         <td width="20%">
@@ -59,7 +59,7 @@
     </tr>
   </table>
   <br>
-      <table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0" cellpadding="5">
+  <table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0" cellpadding="5">
     <tr>
       <td align="right" width="25%">Comission Debit Maintenance (%):</td>
         <td width="20%">
@@ -71,7 +71,7 @@
     </tr>
   </table>
   <br>
-      <table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0" cellpadding="5">
+  <table width="95%" bgcolor="f8f8ff" border="0" cellspacing="0" cellpadding="5">
     <tr>
       <td align="right" width="25%">Comission Debit Renovate (%):</td>
         <td width="20%">

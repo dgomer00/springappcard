@@ -21,25 +21,24 @@ import es.unileon.springappcard.service.ComissionManager;
 @Controller
 public class ComissionController {
 
-    protected final Log logger = LogFactory.getLog(getClass());
-    
-    @Autowired
-    private ComissionManager comissionManager;
+	protected final Log logger = LogFactory.getLog(getClass());
 
-    @RequestMapping(value="/hello.htm")
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-    	  String now = (new Date()).toString();
-          logger.info("Returning hello view with " + now);
-          Map<String, Object> myModel = new HashMap<String, Object>();
-          myModel.put("now", now);
-          myModel.put("comissions", this.comissionManager.getComissions());
-          
+	@Autowired
+	private ComissionManager comissionManager;
 
-          return new ModelAndView("hello", "model", myModel);
-    }
-    
-    public void setComissionManager(ComissionManager comissionManager){
-    	this.comissionManager = comissionManager;
-    }
+	@RequestMapping(value = "/hello.htm")
+	public ModelAndView handleRequest(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		String now = (new Date()).toString();
+		logger.info("Returning hello view with " + now);
+		Map<String, Object> myModel = new HashMap<String, Object>();
+		myModel.put("now", now);
+		myModel.put("comissions", this.comissionManager.getComissions());
+
+		return new ModelAndView("hello", "model", myModel);
+	}
+
+	public void setComissionManager(ComissionManager comissionManager) {
+		this.comissionManager = comissionManager;
+	}
 }
