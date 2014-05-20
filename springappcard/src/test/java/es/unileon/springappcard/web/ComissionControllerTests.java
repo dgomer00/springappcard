@@ -2,6 +2,7 @@ package es.unileon.springappcard.web;
 
 import static org.junit.Assert.*;
 
+
 import java.util.Map;
 
 import org.junit.Test;
@@ -19,9 +20,8 @@ public class ComissionControllerTests {
 		assertEquals("hello", modelAndView.getViewName());
 		assertNotNull(modelAndView.getModel());
 		@SuppressWarnings("unchecked")
-		Map<String, Object> modelMap = (Map<String, Object>) modelAndView
-				.getModel().get("model");
-		String nowValue = (String) modelAndView.getModel().get("now");
+		Map<String, Object> modelMap = (Map<String, Object>) modelAndView.getModel().get("model");
+		String nowValue = (String) modelMap.get("now");
 		assertNotNull(nowValue);
 	}
 

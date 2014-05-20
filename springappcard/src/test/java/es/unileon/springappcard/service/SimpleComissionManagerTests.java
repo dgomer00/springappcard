@@ -90,7 +90,9 @@ public class SimpleComissionManagerTests {
 
 	@Test
 	public void testIncreasePriceWithPositivePercentage() {
-		comissionManager.increaseComission(POSITIVE_COMISSION_INCREASE);
+		comissionManager.increaseComissionCreditEmission(POSITIVE_COMISSION_INCREASE);
+		comissionManager.increaseComissionCreditMaintenance(POSITIVE_COMISSION_INCREASE);
+		
 		double expectedCreditComissionWithIncrease = 3.675;
 		double expectedDebitComissionWithIncrease = 2.205;
 
