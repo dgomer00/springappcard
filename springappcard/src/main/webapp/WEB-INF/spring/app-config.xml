@@ -10,49 +10,6 @@
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 		
-		 <bean id="productManager" class="es.unileon.springappcard.service.SimpleComissionManager">
-         <property name="comissions">
-            <list>
-                <ref bean="comission1"/>
-                <ref bean="comission2"/>
-                <ref bean="comission3"/>
-                <ref bean="comission4"/>
-                <ref bean="comission5"/>
-                <ref bean="comission6"/>
-            </list>
-         </property>
-       </bean>
-
-       <bean id="comission1" class="es.unileon.springappcard.domain.Comission">
-         <property name="description" value="Comission Credit Emission"/>
-         <property name="comission" value="1.00"/>
-       </bean>
-        
-       <bean id="comission2" class="es.unileon.springappcard.domain.Comission">
-         <property name="description" value="Comission Credit Maintenance"/>
-         <property name="comission" value="25.00"/>
-       </bean>
-
-       <bean id="comission3" class="es.unileon.springappcard.domain.Comission">
-         <property name="description" value="Comission Credit Renovate"/>
-         <property name="comission" value="30.00"/>
-       </bean>
-       
-       <bean id="comission4" class="es.unileon.springappcard.domain.Comission">
-         <property name="description" value="Comission Debit Emission"/>
-         <property name="comission" value="1.00"/>
-       </bean>
-        
-       <bean id="comission5" class="es.unileon.springappcard.domain.Comission">
-         <property name="description" value="Comission Debit Maintenance"/>
-         <property name="comission" value="15.00"/>
-       </bean>
-
-       <bean id="comission6" class="es.unileon.springappcard.domain.Comission">
-         <property name="description" value="Comission Debit Renovate"/>
-         <property name="comission" value="20.00"/>
-       </bean>
-
        <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
          <property name="basename" value="messages"/>
        </bean>

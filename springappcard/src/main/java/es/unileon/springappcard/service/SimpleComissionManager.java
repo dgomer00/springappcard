@@ -3,27 +3,34 @@ package es.unileon.springappcard.service;
 import java.util.Iterator;
 import java.util.List;
 
-import es.unileon.springappcard.domain.Comission;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import es.unileon.springappcard.domain.Comission;
+import es.unileon.springappcard.repository.ComissionDao;
+
+@Component
 public class SimpleComissionManager implements ComissionManager {
 
 	private static final long serialVersionUID = 1L;
 
-	private List<Comission> comissions;
+	@Autowired
+	private ComissionDao comissionDao;
+	
+	public void setComissionDao(ComissionDao comissionDao){
+		this.comissionDao = comissionDao;
+	}
 
 	public List<Comission> getComissions() {
-		return comissions;
+		return comissionDao.getComissionList();
 	}
 
 	public void increaseComission(int percentage) {
 
 	}
 
-	public void setComissions(List<Comission> comissions) {
-		this.comissions = comissions;
-	}
-
 	public void increaseComissionCreditEmission(int percentage) {
+	    List<Comission> comissions = comissionDao.getComissionList();
 		if (comissions != null) {
 			/**
 			 * for (Comission comission : comissions) { double newComission =
@@ -38,6 +45,7 @@ public class SimpleComissionManager implements ComissionManager {
 							.doubleValue()
 							* (100 + percentage) / 100;
 					comissions.get(0).setComission(newComission);
+					comissionDao.saveComission(comissions.get(0));
 				}
 			}
 		}
@@ -45,6 +53,7 @@ public class SimpleComissionManager implements ComissionManager {
 	}
 
 	public void increaseComissionCreditMaintenance(int percentage) {
+		List<Comission> comissions = comissionDao.getComissionList();
 		if (comissions != null) {
 			/**
 			 * for (Comission comission : comissions) { double newComission =
@@ -59,6 +68,7 @@ public class SimpleComissionManager implements ComissionManager {
 							.doubleValue()
 							* (100 + percentage) / 100;
 					comissions.get(1).setComission(newComission);
+					comissionDao.saveComission(comissions.get(1));
 				}
 			}
 		}
@@ -66,6 +76,7 @@ public class SimpleComissionManager implements ComissionManager {
 	}
 
 	public void increaseComissionCreditRenovate(int percentage) {
+		List<Comission> comissions = comissionDao.getComissionList();
 		if (comissions != null) {
 			/**
 			 * for (Comission comission : comissions) { double newComission =
@@ -79,6 +90,7 @@ public class SimpleComissionManager implements ComissionManager {
 							.doubleValue()
 							* (100 + percentage) / 100;
 					comissions.get(2).setComission(newComission);
+					comissionDao.saveComission(comissions.get(2));
 				}
 			}
 
@@ -86,6 +98,7 @@ public class SimpleComissionManager implements ComissionManager {
 	}
 
 	public void increaseComissionDebitEmission(int percentage) {
+		List<Comission> comissions = comissionDao.getComissionList();
 		if (comissions != null) {
 			/**
 			 * for (Comission comission : comissions) { double newComission =
@@ -99,6 +112,7 @@ public class SimpleComissionManager implements ComissionManager {
 							.doubleValue()
 							* (100 + percentage) / 100;
 					comissions.get(3).setComission(newComission);
+					comissionDao.saveComission(comissions.get(3));
 				}
 			}
 
@@ -107,6 +121,7 @@ public class SimpleComissionManager implements ComissionManager {
 	}
 
 	public void increaseComissionDebitMaintenance(int percentage) {
+		List<Comission> comissions = comissionDao.getComissionList();
 		if (comissions != null) {
 			/**
 			 * for (Comission comission : comissions) { double newComission =
@@ -120,6 +135,7 @@ public class SimpleComissionManager implements ComissionManager {
 							.doubleValue()
 							* (100 + percentage) / 100;
 					comissions.get(4).setComission(newComission);
+					comissionDao.saveComission(comissions.get(4));
 				}
 			}
 
@@ -128,6 +144,7 @@ public class SimpleComissionManager implements ComissionManager {
 	}
 
 	public void increaseComissionDebitRenovate(int percentage) {
+		List<Comission> comissions = comissionDao.getComissionList();
 		if (comissions != null) {
 			/**
 			 * for (Comission comission : comissions) { double newComission =
@@ -141,6 +158,7 @@ public class SimpleComissionManager implements ComissionManager {
 							.doubleValue()
 							* (100 + percentage) / 100;
 					comissions.get(5).setComission(newComission);
+					comissionDao.saveComission(comissions.get(5));
 				}
 			}
 

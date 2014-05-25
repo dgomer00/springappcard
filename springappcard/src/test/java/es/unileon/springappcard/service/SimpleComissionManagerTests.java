@@ -2,10 +2,13 @@ package es.unileon.springappcard.service;
 
 import static org.junit.Assert.*;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 import es.unileon.springappcard.domain.Comission;
+import es.unileon.springappcard.repository.ComissionDao;
+import es.unileon.springappcard.repository.InMemoryComissionDao;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -42,13 +45,16 @@ public class SimpleComissionManagerTests {
 		product.setComission(DEBITEMISSION_COMISSION);
 		comissions.add(product);
 
-		comissionManager.setComissions(comissions);
+		ComissionDao comissionDao = new InMemoryComissionDao(comissions);
+		comissionManager.setComissionDao(comissionDao);
+		//comissionManager.setComissions(comissions);
 
 	}
 
 	@Test
-	public void testGetProductsWithNoComission() {
+	public void testGetComissionsWithNoComission() {
 		comissionManager = new SimpleComissionManager();
+		comissionManager.setComissionDao(new InMemoryComissionDao(null));
 		assertNull(comissionManager.getComissions());
 	}
 
@@ -71,6 +77,7 @@ public class SimpleComissionManagerTests {
 	public void testIncreaseComissionWithNullListOfComissions() {
 		try {
 			comissionManager = new SimpleComissionManager();
+			comissionManager.setComissionDao(new InMemoryComissionDao(null));
 			comissionManager.increaseComission(POSITIVE_COMISSION_INCREASE);
 		} catch (NullPointerException ex) {
 			fail("Comissions list is null.");
@@ -81,7 +88,8 @@ public class SimpleComissionManagerTests {
 	public void testIncreasePriceWithEmptyListOfComissions() {
 		try {
 			comissionManager = new SimpleComissionManager();
-			comissionManager.setComissions(new ArrayList<Comission>());
+			comissionManager.setComissionDao(new InMemoryComissionDao(new ArrayList<Comission>()));
+			//comissionManager.setComissions(new ArrayList<Comission>());
 			comissionManager.increaseComission(POSITIVE_COMISSION_INCREASE);
 		} catch (Exception ex) {
 			fail("Comissions list is empty.");
