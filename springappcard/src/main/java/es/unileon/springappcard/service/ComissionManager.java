@@ -4,7 +4,11 @@ import es.unileon.springappcard.domain.Comission;
 
 import java.io.Serializable;
 import java.util.List;
-
+/**
+ * 
+ * @author David Gómez Riesgo
+ *
+ */
 public interface ComissionManager extends Serializable {
 
 	public void increaseComissionCreditEmission(int percentage);

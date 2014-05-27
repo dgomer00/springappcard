@@ -2,7 +2,6 @@ package es.unileon.springappcard.web;
 
 import static org.junit.Assert.*;
 
-
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -13,6 +12,11 @@ import es.unileon.springappcard.domain.Comission;
 import es.unileon.springappcard.repository.InMemoryComissionDao;
 import es.unileon.springappcard.service.SimpleComissionManager;
 
+/**
+ * 
+ * @author David Gómez Riesgo
+ *
+ */
 public class ComissionControllerTests {
 
 	@Test
@@ -21,12 +25,13 @@ public class ComissionControllerTests {
 		SimpleComissionManager scm = new SimpleComissionManager();
 		scm.setComissionDao(new InMemoryComissionDao(new ArrayList<Comission>()));
 		controller.setComissionManager(scm);
-		//controller.setComissionManager(new SimpleComissionManager());
+		// controller.setComissionManager(new SimpleComissionManager());
 		ModelAndView modelAndView = controller.handleRequest(null, null);
 		assertEquals("hello", modelAndView.getViewName());
 		assertNotNull(modelAndView.getModel());
 		@SuppressWarnings("unchecked")
-		Map<String, Object> modelMap = (Map<String, Object>) modelAndView.getModel().get("model");
+		Map<String, Object> modelMap = (Map<String, Object>) modelAndView
+				.getModel().get("model");
 		String nowValue = (String) modelMap.get("now");
 		assertNotNull(nowValue);
 	}

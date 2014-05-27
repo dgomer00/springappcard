@@ -6,39 +6,42 @@ import javax.validation.constraints.Min;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+/**
+ * 
+ * @author David Gómez Riesgo
+ *
+ */
 public class ComissionIncrease {
-   
+
 	/** Logger for this class and subclasses */
-    protected final Log logger = LogFactory.getLog(getClass());
+	protected final Log logger = LogFactory.getLog(getClass());
 
-    @Min(0)
-    @Max(15)
-    private int percentageCreditEmission;
-    @Min(0)
-    @Max(15)
-    private int percentageCreditMaintenance;
-    @Min(0)
-    @Max(15)
-    private int percentageCreditRenovate;
-    @Min(0)
-    @Max(15)
-    private int percentageDebitEmission;
-    @Min(0)
-    @Max(15)
-    private int percentageDebitMaintenance;
-    @Min(0)
-    @Max(15)
-    private int percentageDebitRenovate;
+	@Min(0)
+	@Max(15)
+	private int percentageCreditEmission;
+	@Min(0)
+	@Max(15)
+	private int percentageCreditMaintenance;
+	@Min(0)
+	@Max(15)
+	private int percentageCreditRenovate;
+	@Min(0)
+	@Max(15)
+	private int percentageDebitEmission;
+	@Min(0)
+	@Max(15)
+	private int percentageDebitMaintenance;
+	@Min(0)
+	@Max(15)
+	private int percentageDebitRenovate;
 
-
-
-    public int getPercentageCreditEmission() {
+	public int getPercentageCreditEmission() {
 		return percentageCreditEmission;
 	}
 
 	public void setPercentageCreditEmission(int percentageCreditEmission) {
 		this.percentageCreditEmission = percentageCreditEmission;
-        logger.info("Percentage set to " + percentageCreditEmission);
+		logger.info("Percentage set to " + percentageCreditEmission);
 	}
 
 	public int getPercentageCreditMaintenance() {
@@ -85,6 +88,5 @@ public class ComissionIncrease {
 		this.percentageDebitRenovate = percentageDebitRenovate;
 		logger.info("Percentage set to " + percentageDebitRenovate);
 	}
-
 
 }

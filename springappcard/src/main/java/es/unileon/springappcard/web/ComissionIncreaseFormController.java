@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import es.unileon.springappcard.service.ComissionIncrease;
 import es.unileon.springappcard.service.ComissionManager;
 
+/**
+ * 
+ * @author David Gómez Riesgo
+ *
+ */
 @Controller
 @RequestMapping(value = "comissionincrease.htm")
 public class ComissionIncreaseFormController {
@@ -27,7 +32,7 @@ public class ComissionIncreaseFormController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String onSubmit(@Valid ComissionIncrease comissionIncrease,
 			BindingResult result) {
-		
+
 		if (result.hasErrors()) {
 			return "comissionincrease";
 		}

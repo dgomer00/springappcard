@@ -9,8 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author David Gómez Riesgo
+ *
+ */
 @Entity
-@Table(name="comissions")
+@Table(name = "comissions")
 public class Comission implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -18,7 +23,6 @@ public class Comission implements Serializable {
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	
 	private String description;
 	private Double comission;
 

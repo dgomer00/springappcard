@@ -9,6 +9,11 @@ import org.springframework.stereotype.Component;
 import es.unileon.springappcard.domain.Comission;
 import es.unileon.springappcard.repository.ComissionDao;
 
+/**
+ * 
+ * @author David Gómez Riesgo
+ *
+ */
 @Component
 public class SimpleComissionManager implements ComissionManager {
 
@@ -16,8 +21,8 @@ public class SimpleComissionManager implements ComissionManager {
 
 	@Autowired
 	private ComissionDao comissionDao;
-	
-	public void setComissionDao(ComissionDao comissionDao){
+
+	public void setComissionDao(ComissionDao comissionDao) {
 		this.comissionDao = comissionDao;
 	}
 
@@ -30,15 +35,16 @@ public class SimpleComissionManager implements ComissionManager {
 	}
 
 	public void increaseComissionCreditEmission(int percentage) {
-	    List<Comission> comissions = comissionDao.getComissionList();
+		List<Comission> comissions = comissionDao.getComissionList();
 		if (comissions != null) {
 			/**
-			 * for (Comission comission : comissions) { double newComission =
-			 * comission.getComission().doubleValue() * (100 + percentage)/100;
-			 * comission.setComission(newComission); } }
+			 * Este es el for para aumentar en todas las comisiones el mismo
+			 * valor for (Comission comission : comissions) { double
+			 * newComission = comission.getComission().doubleValue() * (100 +
+			 * percentage)/100; comission.setComission(newComission); } }
 			 **/
 			// Solo cambio el porcentaje de la primera comision.
-			Iterator iter = comissions.iterator();
+			Iterator<Comission> iter = comissions.iterator();
 			while (iter.hasNext()) {
 				if (iter.next().equals(comissions.get(0))) {
 					double newComission = comissions.get(0).getComission()
@@ -55,13 +61,8 @@ public class SimpleComissionManager implements ComissionManager {
 	public void increaseComissionCreditMaintenance(int percentage) {
 		List<Comission> comissions = comissionDao.getComissionList();
 		if (comissions != null) {
-			/**
-			 * for (Comission comission : comissions) { double newComission =
-			 * comission.getComission().doubleValue() * (100 + percentage)/100;
-			 * comission.setComission(newComission); } }
-			 **/
 			// Solo cambio el porcentaje de la segunda comision.
-			Iterator iter = comissions.iterator();
+			Iterator<Comission> iter = comissions.iterator();
 			while (iter.hasNext()) {
 				if (iter.next().equals(comissions.get(1))) {
 					double newComission = comissions.get(1).getComission()
@@ -78,12 +79,7 @@ public class SimpleComissionManager implements ComissionManager {
 	public void increaseComissionCreditRenovate(int percentage) {
 		List<Comission> comissions = comissionDao.getComissionList();
 		if (comissions != null) {
-			/**
-			 * for (Comission comission : comissions) { double newComission =
-			 * comission.getComission().doubleValue() * (100 + percentage)/100;
-			 * comission.setComission(newComission); } }
-			 **/
-			Iterator iter = comissions.iterator();
+			Iterator<Comission> iter = comissions.iterator();
 			while (iter.hasNext()) {
 				if (iter.next().equals(comissions.get(2))) {
 					double newComission = comissions.get(2).getComission()
@@ -100,12 +96,7 @@ public class SimpleComissionManager implements ComissionManager {
 	public void increaseComissionDebitEmission(int percentage) {
 		List<Comission> comissions = comissionDao.getComissionList();
 		if (comissions != null) {
-			/**
-			 * for (Comission comission : comissions) { double newComission =
-			 * comission.getComission().doubleValue() * (100 + percentage)/100;
-			 * comission.setComission(newComission); } }
-			 **/
-			Iterator iter = comissions.iterator();
+			Iterator<Comission> iter = comissions.iterator();
 			while (iter.hasNext()) {
 				if (iter.next().equals(comissions.get(3))) {
 					double newComission = comissions.get(3).getComission()
@@ -123,12 +114,7 @@ public class SimpleComissionManager implements ComissionManager {
 	public void increaseComissionDebitMaintenance(int percentage) {
 		List<Comission> comissions = comissionDao.getComissionList();
 		if (comissions != null) {
-			/**
-			 * for (Comission comission : comissions) { double newComission =
-			 * comission.getComission().doubleValue() * (100 + percentage)/100;
-			 * comission.setComission(newComission); } }
-			 **/
-			Iterator iter = comissions.iterator();
+			Iterator<Comission> iter = comissions.iterator();
 			while (iter.hasNext()) {
 				if (iter.next().equals(comissions.get(4))) {
 					double newComission = comissions.get(4).getComission()
@@ -146,12 +132,7 @@ public class SimpleComissionManager implements ComissionManager {
 	public void increaseComissionDebitRenovate(int percentage) {
 		List<Comission> comissions = comissionDao.getComissionList();
 		if (comissions != null) {
-			/**
-			 * for (Comission comission : comissions) { double newComission =
-			 * comission.getComission().doubleValue() * (100 + percentage)/100;
-			 * comission.setComission(newComission); } }
-			 **/
-			Iterator iter = comissions.iterator();
+			Iterator<Comission> iter = comissions.iterator();
 			while (iter.hasNext()) {
 				if (iter.next().equals(comissions.get(5))) {
 					double newComission = comissions.get(5).getComission()

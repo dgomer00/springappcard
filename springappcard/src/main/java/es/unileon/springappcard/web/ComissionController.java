@@ -18,6 +18,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import es.unileon.springappcard.service.ComissionManager;
 
+/**
+ * 
+ * @author David Gómez Riesgo
+ *
+ */
 @Controller
 public class ComissionController {
 
@@ -34,7 +39,6 @@ public class ComissionController {
 		Map<String, Object> myModel = new HashMap<String, Object>();
 		myModel.put("now", now);
 		myModel.put("comissions", this.comissionManager.getComissions());
-
 		return new ModelAndView("hello", "model", myModel);
 	}
 

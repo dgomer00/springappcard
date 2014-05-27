@@ -12,7 +12,11 @@ import es.unileon.springappcard.repository.InMemoryComissionDao;
 
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ * 
+ * @author David Gómez Riesgo
+ *
+ */
 public class SimpleComissionManagerTests {
 
 	private SimpleComissionManager comissionManager;
@@ -104,7 +108,7 @@ public class SimpleComissionManagerTests {
 		double expectedCreditComissionWithIncrease = 3.675;
 		double expectedDebitComissionWithIncrease = 2.205;
 
-		List<Comission> products = comissionManager.getComissions();
+		List<Comission> comissions = comissionManager.getComissions();
 		Comission comission = comissions.get(0);
 		assertEquals(expectedCreditComissionWithIncrease,
 				comission.getComission(), 0);
