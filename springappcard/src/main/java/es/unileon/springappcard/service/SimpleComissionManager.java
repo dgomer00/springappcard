@@ -55,7 +55,6 @@ public class SimpleComissionManager implements ComissionManager {
 				}
 			}
 		}
-
 	}
 
 	public void increaseComissionCreditMaintenance(int percentage) {
@@ -73,7 +72,6 @@ public class SimpleComissionManager implements ComissionManager {
 				}
 			}
 		}
-
 	}
 
 	public void increaseComissionCreditRenovate(int percentage) {
@@ -89,7 +87,6 @@ public class SimpleComissionManager implements ComissionManager {
 					comissionDao.saveComission(comissions.get(2));
 				}
 			}
-
 		}
 	}
 
@@ -106,9 +103,7 @@ public class SimpleComissionManager implements ComissionManager {
 					comissionDao.saveComission(comissions.get(3));
 				}
 			}
-
 		}
-
 	}
 
 	public void increaseComissionDebitMaintenance(int percentage) {
@@ -124,9 +119,7 @@ public class SimpleComissionManager implements ComissionManager {
 					comissionDao.saveComission(comissions.get(4));
 				}
 			}
-
 		}
-
 	}
 
 	public void increaseComissionDebitRenovate(int percentage) {
@@ -142,8 +135,6 @@ public class SimpleComissionManager implements ComissionManager {
 					comissionDao.saveComission(comissions.get(5));
 				}
 			}
-
 		}
-
 	}
 }

@@ -1,7 +1,7 @@
 CREATE DATABASE springappcard;
 
-GRANT ALL ON springappcard.* TO appcarduser@'%' IDENTIFIED BY 'pappcarduser';
-GRANT ALL ON springappcard.* TO appcarduser@localhost IDENTIFIED BY 'pappcarduser';
+GRANT ALL ON springappcard.* TO springappuser@'%' IDENTIFIED BY 'springappuser';
+GRANT ALL ON springappcard.* TO springappuser@localhost IDENTIFIED BY 'pspringappuser';
 
 USE springappcard;
 
