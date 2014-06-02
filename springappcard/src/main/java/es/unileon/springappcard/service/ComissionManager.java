@@ -9,6 +9,11 @@ import java.util.List;
  * @author David Gómez Riesgo
  *
  */
+/**
+ * creamos el servicio ComissionManager.
+ *  Éste es el servicio responsable de gestionar las comisiones
+ *
+ */
 public interface ComissionManager extends Serializable {
 
 	public void increaseComissionCreditEmission(int percentage);

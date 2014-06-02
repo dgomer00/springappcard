@@ -20,6 +20,19 @@ import es.unileon.springappcard.service.ComissionManager;
  * @author David Gómez Riesgo
  *
  */
+
+/**
+ * Controlador de formulario actuará como controlador de las peticiones de
+ * incremento de comisión realizadas desde el formulario. Spring inyectará
+ * automáticamente al controlador del formulario la referencia al servicio
+ * ComisionManager gracias a la anotación @Autowired. El método
+ * formBackingObject(..) será invocado antes de que el formulario se muestre al
+ * usuario (petición GET) y rellenará el campo con un incremento por defecto de
+ * un 2%. El método onSubmit(..) será invocado cuando el usuario envíe del
+ * formulario a través del método POST. El uso de la anotación @Valid permitirá
+ * validar el incremento introducido y volverá a mostrar el formulario en caso
+ * de que éste no sea válido.
+ */
 @Controller
 @RequestMapping(value = "comissionincrease.htm")
 public class ComissionIncreaseFormController {

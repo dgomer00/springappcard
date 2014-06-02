@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Contiene el contexto de la aplicación -->
+
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -8,6 +11,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
  
+	<!-- leerá el archivo de propiedades(jdbc.properties) y sustituirá cada comodín con su valor actual. --> 
     <!-- holding properties for database connectivity /-->
     <context:property-placeholder location="classpath:jdbc.properties"/>
 

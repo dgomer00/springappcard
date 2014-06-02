@@ -15,6 +15,13 @@ import es.unileon.springappcard.domain.Comission;
  * @author David Gómez Riesgo
  *
  */
+
+/**
+ * Spring permite creación automática de beans de acceso a datos mediante la
+ * anotación @Repository. Asimismo, Spring reconoce las anotaciones del API
+ * estándar JPA. Por ejemplo, la anotación @Persistence es utilizada en la clase
+ * JPAComisionDao para inyectar automáticamente el EntityManager.
+ */
 @Repository(value = "comissionDao")
 public class JPAComissionDao implements ComissionDao {
 
@@ -27,7 +34,7 @@ public class JPAComissionDao implements ComissionDao {
 	public void setEntityManager(EntityManager em) {
 		this.em = em;
 	}
-
+//Ambos metodos ejecutan una consulta usando el entityManager
 	@Transactional(readOnly = true)
 	@SuppressWarnings("unchecked")
 	public List<Comission> getComissionList() {

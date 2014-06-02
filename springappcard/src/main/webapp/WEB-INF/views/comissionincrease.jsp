@@ -1,6 +1,7 @@
 <%@ include file="/WEB-INF/views/include.jsp" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
+<%-- El formulario con los campos de texto para rellenar las comisiones --%>
 <html>
 <head>
   <title><fmt:message key="title"/></title>

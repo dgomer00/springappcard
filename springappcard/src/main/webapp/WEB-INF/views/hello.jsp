@@ -1,6 +1,8 @@
 <%@ include file="/WEB-INF/views/include.jsp" %>
 
+<%-- Esta es la página de bienvenida que se muestra al arrancar la aplicación--%>
 
+<%--Es el modelAnd view devuelto por el controlador (La vista)  --%>
 <html>
   <head><title><fmt:message key="title"/></title></head>
   <body>
