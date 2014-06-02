@@ -1,40 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- contiene la configuración para arrancar la apicación-->
+<!-- contiene la configuración para arrancar la apicación -->
 
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/spring/applicationContext.xml</param-value>
-  </context-param>
+	<!-- Para Configurar la capa de servicio, lo haremos en nuestro propio archivo 
+		de contexto de aplicación. Este archivo se llama 'applicationContext.xml' 
+		y será cargado mediante un servlet listener definido posteriormente -->
 
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/applicationContext.xml</param-value>
+	</context-param>
 
-  <display-name>Springappcard</display-name>
-  
-  <!-- controlador frontal Su misión será controlar hacia dónde serán enrutadas todas nuestras solicitudes -->
-    <servlet>
-    <servlet-name>springappcard</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <init-param>
-       <param-name>contextConfigLocation</param-name>
-       <param-value>/WEB-INF/spring/app-config.xml</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
-<!-- cualquier URL con una extensión de tipo '.htm' sea enrutada hacia el servlet 'springappcard' ( DispatcherServlet).-->
+	<display-name>Springappcard</display-name>
 
-  <servlet-mapping>
-    <servlet-name>springappcard</servlet-name>
-    <url-pattern>*.htm</url-pattern>
-  </servlet-mapping>
-  
+	<!-- controlador frontal Su misión será controlar hacia dónde serán enrutadas 
+		todas nuestras solicitudes -->
+	<servlet>
+		<servlet-name>springappcard</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/app-config.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- cualquier URL con una extensión de tipo '.htm' sea enrutada hacia el 
+		servlet 'springappcard' ( DispatcherServlet). -->
+
+	<servlet-mapping>
+		<servlet-name>springappcard</servlet-name>
+		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+
 
 </web-app> 

@@ -33,7 +33,7 @@ import es.unileon.springappcard.service.ComissionManager;
  */
 /**
  * El controlador ahora hace referencia a la vista por su nombre lógico mediante
- *  el uso del 'InternalResourceViewResolver' definido en 'app-config.xml'.
+ * el uso del 'InternalResourceViewResolver' definido en 'app-config.xml'.
  *
  */
 @Controller
@@ -41,7 +41,8 @@ public class ComissionController {
 
 	protected final Log logger = LogFactory.getLog(getClass());
 
-	//@Autowired Referencia a ComissionManager para que Spring la pueda inyectar automáticamente cuando detecte el componente.
+	// @Autowired Referencia a ComissionManager para que Spring la pueda
+	// inyectar automáticamente cuando detecte el componente.
 	@Autowired
 	private ComissionManager comissionManager;
 

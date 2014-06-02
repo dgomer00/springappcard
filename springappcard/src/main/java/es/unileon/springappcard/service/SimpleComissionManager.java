@@ -22,6 +22,16 @@ public class SimpleComissionManager implements ComissionManager {
 	@Autowired
 	private ComissionDao comissionDao;
 
+	/**
+	 * Se modifica la capa de servicio para que haga uso de la persistencia en
+	 * base de datos. El método getComissions usará ahora este DAO para
+	 * recuperar la lista de comisiones. Finalmente, el método
+	 * increaseComissions recuperará la lista de comisiones y, después de haber
+	 * incrementado las comisiones, almacenará las comisiones de nuevo en la
+	 * base de datos usando el método saveComission definido en el DAO.
+	 * 
+	 * @param comissionDao
+	 */
 	public void setComissionDao(ComissionDao comissionDao) {
 		this.comissionDao = comissionDao;
 	}

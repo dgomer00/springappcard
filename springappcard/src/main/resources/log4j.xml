@@ -20,7 +20,7 @@
 	<logger name="org.springframework.beans">
 		<level value="warn" />
 	</logger>
-	
+
 	<logger name="org.springframework.jdbc">
 		<level value="warn" />
 	</logger>
@@ -40,11 +40,11 @@
 	<logger name="org.springframework.webflow">
 		<level value="warn" />
 	</logger>
-	
+
 	<!-- Root Logger -->
 	<root>
 		<priority value="warn" />
 		<appender-ref ref="console" />
 	</root>
-	
+
 </log4j:configuration>

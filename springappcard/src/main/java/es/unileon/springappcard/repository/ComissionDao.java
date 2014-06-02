@@ -10,8 +10,8 @@ import es.unileon.springappcard.domain.Comission;
  *
  */
 /**
- *Éste será el interface que definirá la funcionalidad
- * de la implementación DAO(Objeto de acceso a datos) que vamos a crear
+ * Éste será el interface que definirá la funcionalidad de la implementación
+ * DAO(Objeto de acceso a datos) que vamos a crear
  */
 public interface ComissionDao {
 

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--  Contiene las definiciones de beans (POJO's) usados por el DispatcherServlet -->
+<!-- Contiene las definiciones de beans (POJO's) usados por el DispatcherServlet -->
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
@@ -12,29 +11,35 @@
 		http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
-		
-		<!-- el bean 'messageSource' que nos permitirá recuperar mensajes desde la ubicación 'messages.properties' -->
-		
-       <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-         <property name="basename" value="messages"/>
-       </bean>
 
-       <!-- Scans the classpath of this application for @Components to deploy as beans -->
-       <context:component-scan base-package="es.unileon.springappcard.web" />
+	<!-- el bean 'messageSource' que nos permitirá recuperar mensajes desde 
+		la ubicación 'messages.properties' -->
+	<!-- Se eliminan los beans de las comisiones para despegar también la configuración 
+		de la capa de servicio de la capa web. -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="messages" />
+	</bean>
 
-       <!-- Configures the @Controller programming model -->
-       <mvc:annotation-driven/>
-       
-       <!-- Para separar la vista del controlador. Usamos la opción para el mapeo
-        	básico entre una vista y una localización, consiste en simplemente configurar
-         	un prefijo y sufijo en InternalResourceViewResolver. Esta solución es la que
-          	vamos a implantar ahora, por lo que modificamos 'app-config.xml' y declaramos
-           	una entrada 'viewResolver'. -->
-       
-       <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
-         <property name="prefix" value="/WEB-INF/views/"></property>
-         <property name="suffix" value=".jsp"></property>        
-       </bean>
+	<!-- Scans the classpath of this application for @Components to deploy as 
+		beans -->
+	<context:component-scan base-package="es.unileon.springappcard.web" />
+
+	<!-- Configures the @Controller programming model -->
+	<mvc:annotation-driven />
+
+	<!-- Para separar la vista del controlador. Usamos la opción para el mapeo 
+		básico entre una vista y una localización, consiste en simplemente configurar 
+		un prefijo y sufijo en InternalResourceViewResolver. Esta solución es la 
+		que vamos a implantar ahora, por lo que modificamos 'app-config.xml' y declaramos 
+		una entrada 'viewResolver'. -->
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView"></property>
+		<property name="prefix" value="/WEB-INF/views/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
 
 </beans>

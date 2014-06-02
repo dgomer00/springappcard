@@ -34,7 +34,8 @@ public class JPAComissionDao implements ComissionDao {
 	public void setEntityManager(EntityManager em) {
 		this.em = em;
 	}
-//Ambos metodos ejecutan una consulta usando el entityManager
+
+	// Ambos métodos ejecutan una consulta usando el entityManager
 	@Transactional(readOnly = true)
 	@SuppressWarnings("unchecked")
 	public List<Comission> getComissionList() {

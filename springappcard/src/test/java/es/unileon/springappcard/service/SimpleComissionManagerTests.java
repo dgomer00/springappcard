@@ -2,7 +2,6 @@ package es.unileon.springappcard.service;
 
 import static org.junit.Assert.*;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +11,7 @@ import es.unileon.springappcard.repository.InMemoryComissionDao;
 
 import org.junit.Before;
 import org.junit.Test;
+
 /**
  * 
  * @author David Gómez Riesgo
@@ -51,7 +51,7 @@ public class SimpleComissionManagerTests {
 
 		ComissionDao comissionDao = new InMemoryComissionDao(comissions);
 		comissionManager.setComissionDao(comissionDao);
-		//comissionManager.setComissions(comissions);
+		// comissionManager.setComissions(comissions);
 
 	}
 
@@ -92,8 +92,9 @@ public class SimpleComissionManagerTests {
 	public void testIncreasePriceWithEmptyListOfComissions() {
 		try {
 			comissionManager = new SimpleComissionManager();
-			comissionManager.setComissionDao(new InMemoryComissionDao(new ArrayList<Comission>()));
-			//comissionManager.setComissions(new ArrayList<Comission>());
+			comissionManager.setComissionDao(new InMemoryComissionDao(
+					new ArrayList<Comission>()));
+			// comissionManager.setComissions(new ArrayList<Comission>());
 			comissionManager.increaseComission(POSITIVE_COMISSION_INCREASE);
 		} catch (Exception ex) {
 			fail("Comissions list is empty.");
@@ -102,9 +103,11 @@ public class SimpleComissionManagerTests {
 
 	@Test
 	public void testIncreasePriceWithPositivePercentage() {
-		comissionManager.increaseComissionCreditEmission(POSITIVE_COMISSION_INCREASE);
-		comissionManager.increaseComissionCreditMaintenance(POSITIVE_COMISSION_INCREASE);
-		
+		comissionManager
+				.increaseComissionCreditEmission(POSITIVE_COMISSION_INCREASE);
+		comissionManager
+				.increaseComissionCreditMaintenance(POSITIVE_COMISSION_INCREASE);
+
 		double expectedCreditComissionWithIncrease = 3.675;
 		double expectedDebitComissionWithIncrease = 2.205;
 

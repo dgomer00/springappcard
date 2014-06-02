@@ -13,11 +13,10 @@ import org.apache.commons.logging.LogFactory;
  */
 
 /**
- * Un JavaBean muy sencillo que solamente contiene las 6 propiedades,
- * con sus correspondientes métodos getter y setter. Éste es el
- *  objeto que el formulario rellenará y desde el que nuestra lógica
- *   de negocio extraerá el porcentaje de incremento que queremos
- *    aplicar a las comisiones.
+ * Un JavaBean muy sencillo que solamente contiene las 6 propiedades, con sus
+ * correspondientes métodos getter y setter. Éste es el objeto que el formulario
+ * rellenará y desde el que nuestra lógica de negocio extraerá el porcentaje de
+ * incremento que queremos aplicar a las comisiones.
  */
 public class ComissionIncrease {
 
